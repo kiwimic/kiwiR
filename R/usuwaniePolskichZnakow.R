@@ -9,24 +9,31 @@
 #' @export
 #'
 #'
-usuwaniePolskichZnakow <- Vectorize(function(x) {
-  x <- gsub(x, pattern = "Ą", replacement = "A")
-  x <- gsub(x, pattern = "Ć", replacement = "C")
-  x <- gsub(x, pattern = "Ę", replacement = "E")
-  x <- gsub(x, pattern = "Ł", replacement = "L")
-  x <- gsub(x, pattern = "Ś", replacement = "S")
-  x <- gsub(x, pattern = "Ń", replacement = "N")
-  x <- gsub(x, pattern = "Ó", replacement = "O")
-  x <- gsub(x, pattern = "Ź", replacement = "Z")
-  x <- gsub(x, pattern = "Ż", replacement = "Z")
-  x <- gsub(x, pattern = "ą", replacement = "a")
-  x <- gsub(x, pattern = "ć", replacement = "c")
-  x <- gsub(x, pattern = "ę", replacement = "e")
-  x <- gsub(x, pattern = "ł", replacement = "l")
-  x <- gsub(x, pattern = "ś", replacement = "s")
-  x <- gsub(x, pattern = "ń", replacement = "n")
-  x <- gsub(x, pattern = "ó", replacement = "o")
-  x <- gsub(x, pattern = "ź", replacement = "z")
-  x <- gsub(x, pattern = "ż", replacement = "z")
+usuwaniePolskichZnakow <- Vectorize(function(x, perl = F) {
+
+  if (!is.character(x)) {
+    stop(sprintf(
+      "x is non-character but class: %s",
+      class(x))
+    )
+  }
+  x <- gsub(x, pattern = "Ą", replacement = "A", perl = perl)
+  x <- gsub(x, pattern = "Ć", replacement = "C", perl = perl)
+  x <- gsub(x, pattern = "Ę", replacement = "E", perl = perl)
+  x <- gsub(x, pattern = "Ł", replacement = "L", perl = perl)
+  x <- gsub(x, pattern = "Ś", replacement = "S", perl = perl)
+  x <- gsub(x, pattern = "Ń", replacement = "N", perl = perl)
+  x <- gsub(x, pattern = "Ó", replacement = "O", perl = perl)
+  x <- gsub(x, pattern = "Ź", replacement = "Z", perl = perl)
+  x <- gsub(x, pattern = "Ż", replacement = "Z", perl = perl)
+  x <- gsub(x, pattern = "ą", replacement = "a", perl = perl)
+  x <- gsub(x, pattern = "ć", replacement = "c", perl = perl)
+  x <- gsub(x, pattern = "ę", replacement = "e", perl = perl)
+  x <- gsub(x, pattern = "ł", replacement = "l", perl = perl)
+  x <- gsub(x, pattern = "ś", replacement = "s", perl = perl)
+  x <- gsub(x, pattern = "ń", replacement = "n", perl = perl)
+  x <- gsub(x, pattern = "ó", replacement = "o", perl = perl)
+  x <- gsub(x, pattern = "ź", replacement = "z", perl = perl)
+  x <- gsub(x, pattern = "ż", replacement = "z", perl = perl)
   return(x)
 }, vectorize.args = "x")
