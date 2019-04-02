@@ -12,6 +12,13 @@
 #'
 #'
 formatujKwote <- Vectorize(function(x, miesjcaPoPrzecinku = 1, prefix = "", suffix = "zł") {
+  if (!is.numeric(x)) {
+    stop(sprintf(
+      "x is non-numeric but class: %s",
+      class(x))
+      )
+  }
+
   if(abs(x) < 1000) {
     return(paste0(prefix, x, suffix))
   } else if (abs(x) < 1000 * 1000) {
