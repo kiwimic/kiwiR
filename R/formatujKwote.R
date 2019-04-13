@@ -1,10 +1,9 @@
-
-#' Służy do formatowania kwot przy prezentacji na np. wykresach i danych zawsze zwraca character
+#' Słuzy do formatowania kwot przy prezentacji na np. wykresach i danych zawsze zwraca character
 #'
 #' @param x vector numeryczny (numeric vector)
-#' @param miejscaPoPrzecinku ilość miejsc po przecinku, które mają być prezentowane domyślnie 1 (jedno)
-#' @param prefix co ma być przed kwotą np. znak '$' domyślnie nic ''
-#' @param suffix co ma być po kwocie np. znak '$' domyślnie nic 'zł'
+#' @param miejscaPoPrzecinku ilosc miejsc po przecinku, ktore maja byc prezentowane domyclnie 1 (jedno)
+#' @param prefix co ma byc przed kwota np. znak '$' domyslnie nic ''
+#' @param suffix co ma byc po kwocie np. znak '$' domyslnie nic 'zł'
 #'
 #' @return zwraca characet vector dla kwot
 #'
@@ -20,11 +19,11 @@ formatujKwote <- Vectorize(function(x, miesjcaPoPrzecinku = 1, prefix = "", suff
   }
 
   if(abs(x) < 1000) {
-    return(paste0(prefix, x, suffix))
+    return(paste0(prefix, round(x, miesjcaPoPrzecinku), suffix))
   } else if (abs(x) < 1000 * 1000) {
-    return(paste0(prefix, round(x/1000, 1),"tys ", suffix))
+    return(paste0(prefix, round(x/1000, miesjcaPoPrzecinku),"tys ", suffix))
   } else {
-    return(paste0(prefix, round(x/(1000*1000), 1),"mln ", suffix))
+    return(paste0(prefix, round(x/(1000*1000), miesjcaPoPrzecinku),"mln ", suffix))
   }
 }, vectorize.args = "x")
 
