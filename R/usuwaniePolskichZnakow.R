@@ -1,5 +1,3 @@
-
-
 #' Służy do zamiany polskich liter na ich odpowiedniki bez śladczków
 #'
 #' @param x vector numeryczny (numeric vector)

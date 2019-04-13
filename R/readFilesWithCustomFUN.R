@@ -1,7 +1,7 @@
 
-#' Funkcja służy jako generyk to wczytywania wielu plików za pomocą różnych funkcji, można tam wstawić csv, xlsx itp
+#' Funkcja słuzy jako generyk to wczytywania wielu plikow za pomocą roznych funkcji, mozna tam wstawic csv, xlsx itp
 #'
-#' @param paths wektor ścieżek do plików
+#' @param paths wektor sciezek do plikow
 #' @param FUN niestandardowa funkcja np. readxl::read_excel, czy read.csv
 #' @param ... dodatkowe parametry
 #'
