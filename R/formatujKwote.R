@@ -10,7 +10,7 @@
 #' @export
 #'
 #'
-formatujKwote <- Vectorize(function(x, miesjcaPoPrzecinku = 1, prefix = "", suffix = "zł") {
+formatujKwote <- Vectorize(function(x, miejscaPoPrzecinku = 1, prefix = "", suffix = "zł") {
   if (!is.numeric(x)) {
     stop(sprintf(
       "x is non-numeric but class: %s",
@@ -19,11 +19,11 @@ formatujKwote <- Vectorize(function(x, miesjcaPoPrzecinku = 1, prefix = "", suff
   }
 
   if(abs(x) < 1000) {
-    return(paste0(prefix, round(x, miesjcaPoPrzecinku), suffix))
+    return(paste0(prefix, round(x, miejscaPoPrzecinku), suffix))
   } else if (abs(x) < 1000 * 1000) {
-    return(paste0(prefix, round(x/1000, miesjcaPoPrzecinku),"tys ", suffix))
+    return(paste0(prefix, round(x/1000, miejscaPoPrzecinku),"tys ", suffix))
   } else {
-    return(paste0(prefix, round(x/(1000*1000), miesjcaPoPrzecinku),"mln ", suffix))
+    return(paste0(prefix, round(x/(1000*1000), miejscaPoPrzecinku),"mln ", suffix))
   }
 }, vectorize.args = "x")
 
