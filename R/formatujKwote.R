@@ -25,6 +25,6 @@ formatujKwote <- Vectorize(function(x, miejscaPoPrzecinku = 1, prefix = "", suff
   } else {
     return(paste0(prefix, round(x/(1000*1000), miejscaPoPrzecinku),"mln ", suffix))
   }
-}, vectorize.args = "x")
+}, vectorize.args = "x", USE.NAMES = F)
 
 
