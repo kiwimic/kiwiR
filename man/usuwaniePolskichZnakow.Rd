@@ -2,16 +2,19 @@
 % Please edit documentation in R/usuwaniePolskichZnakow.R
 \name{usuwaniePolskichZnakow}
 \alias{usuwaniePolskichZnakow}
-\title{Służy do zamiany polskich liter na ich odpowiedniki bez śladczków}
+\title{Słuzy do zamiany polskich liter na ich odpowiedniki bez sladczkow}
 \usage{
-usuwaniePolskichZnakow(x, perl = F)
+usuwaniePolskichZnakow(x, pattern = c("Ą", "Ć", "Ę", "Ł", "Ś", "Ń",
+  "Ó", "Ź", "Ż", "ą", "ć", "ę", "ł", "ś", "ń", "ó", "ź", "ż"),
+  replacement = c("A", "C", "E", "L", "S", "N", "O", "Z", "Z", "a", "c",
+  "e", "l", "s", "n", "o", "z", "z"))
 }
 \arguments{
 \item{x}{vector numeryczny (numeric vector)}
 }
 \value{
-zwraca vector po usunięciu wszystkich polskich znaków (zamienieniu ich na odpowiednik ą -> a)
+zwraca vector po usunieciu wszystkich polskich znakow (zamienieniu ich na odpowiednik a z sladczkiem -> a)
 }
 \description{
-Służy do zamiany polskich liter na ich odpowiedniki bez śladczków
+Słuzy do zamiany polskich liter na ich odpowiedniki bez sladczkow
 }
