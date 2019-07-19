@@ -12,21 +12,21 @@
 #'
 drWhyPallete <- function(N) {
 
-  stopifnot(integer(N)<0, !is.numeric(N))
+  stopifnot(as.integer(N)>0, is.numeric(N))
 
   c("#8bdcbe", "#f05a71", "#371ea3" ,"#46bac2", "#ae2c87", "#ffa58c", "#4378bf", "#160e3b", "#f0f0f4") -> pal
 
-  if (integer(N) > 9) {
-    warning(glue::glue("{N} > 9, so addiction colors, will be added from rainbow pallete", N = N))
+  if (as.integer(N) > 9) {
+    warning(glue::glue("{N} > 9, so addiction colors, will be added from rainbow pallete", N = as.integer(N)))
 
     gg_color_hue <- function(n) {
       hues = seq(15, 375, length = n + 1)
       hcl(h = hues, l = 65, c = 100)[1:n]
     }
 
-    subPallete <- c(pal[c(9,1,2,3,4,5,6,7,8)],gg_color_hue(integer(N)-9))
+    subPallete <- c(pal[c(9,1,2,3,4,5,6,7,8)],gg_color_hue(as.integer(N)-9))
   } else {
-    subPallete <- switch(integer(N),
+    subPallete <- switch(as.integer(N),
                          {pal[4]},#1
                          {pal[c(1,7)]},#2
                          {pal[c(1,4,7)]},#3
