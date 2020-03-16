@@ -2,22 +2,22 @@
 % Please edit documentation in R/formatujKwote.R
 \name{formatujKwote}
 \alias{formatujKwote}
-\title{Służy do formatowania kwot przy prezentacji na np. wykresach i danych zawsze zwraca character}
+\title{Sluzy do formatowania kwot przy prezentacji na np. wykresach i danych zawsze zwraca character}
 \usage{
-formatujKwote(x, miesjcaPoPrzecinku = 1, prefix = "", suffix = "zł")
+formatujKwote(x, miejscaPoPrzecinku = 1, prefix = "", suffix = "zł")
 }
 \arguments{
 \item{x}{vector numeryczny (numeric vector)}
 
-\item{prefix}{co ma być przed kwotą np. znak '$' domyślnie nic ''}
+\item{miejscaPoPrzecinku}{ilosc miejsc po przecinku, ktore maja byc prezentowane domyslnie 1 (jedno)}
 
-\item{suffix}{co ma być po kwocie np. znak '$' domyślnie nic 'zł'}
+\item{prefix}{co ma byc przed kwota np. string "zl" domyslnie nic ''}
 
-\item{miejscaPoPrzecinku}{ilość miejsc po przecinku, które mają być prezentowane domyślnie 1 (jedno)}
+\item{suffix}{co ma byc po kwocie np. znak 'dolara' domyslnie 'zł'}
 }
 \value{
-zwraca characet vector dla kwot
+zwraca character vector dla kwot
 }
 \description{
-Służy do formatowania kwot przy prezentacji na np. wykresach i danych zawsze zwraca character
+Sluzy do formatowania kwot przy prezentacji na np. wykresach i danych zawsze zwraca character
 }

@@ -1,9 +1,9 @@
-#' Słuzy do formatowania kwot przy prezentacji na np. wykresach i danych zawsze zwraca character
+#' Sluzy do formatowania kwot przy prezentacji na np. wykresach i danych zawsze zwraca character
 #'
 #' @param x vector numeryczny (numeric vector)
 #' @param miejscaPoPrzecinku ilosc miejsc po przecinku, ktore maja byc prezentowane domyslnie 1 (jedno)
-#' @param prefix co ma byc przed kwota np. znak '$' domyslnie nic ''
-#' @param suffix co ma byc po kwocie np. znak '$' domyslnie nic 'zł'
+#' @param prefix co ma byc przed kwota np. string "zl" domyslnie nic ''
+#' @param suffix co ma byc po kwocie np. znak 'dolara' domyslnie 'zł'
 #'
 #' @return zwraca character vector dla kwot
 #'

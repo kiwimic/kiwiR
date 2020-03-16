@@ -33,7 +33,7 @@ ggPlotMissings <- function(data, title = NULL, ggtheme = ggplot2::theme_classic(
          title = title) +
     theme(legend.position = "bottom") +
     geom_text(
-      aes(label =kiwiR::formatujKwote(num_missing, suffix = ""), y = 0.95),
+      aes(label = kiwiR::formatujKwote(num_missing, suffix = ""), y = 0.95),
       position = position_dodge(0.9),
       vjust = 0
     )
