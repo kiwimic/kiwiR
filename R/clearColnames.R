@@ -1,6 +1,6 @@
 #' Służy do uporządkowania nazw kolumn
 #'
-#' @param x vector numeryczny (numeric vector)
+#' @param x dataframe, tibble, etc
 #'
 #' @return zwraca vector po usunięciu wszystkich polskich znaków (zamienieniu ich na odpowiednik ą -> a)
 #'
